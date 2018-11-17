@@ -1,0 +1,32 @@
+{
+  "name": "pkcs1-sha256-verify",
+  "version": "1.0.0",
+  "description": "Solidity functions for traversing an ASN1-encoded data structure",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonahGroendal/pkcs1-sha256-verify.git"
+  },
+  "keywords": [
+    "pkcs1",
+    "sha256",
+    "rsa",
+    "signature",
+    "verification",
+    "Solidity"
+  ],
+  "author": "Jonah Groendal",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/JonahGroendal/pkcs1-sha256-verify/issues"
+  },
+  "homepage": "https://github.com/JonahGroendal/pkcs1-sha256-verify#readme",
+  "devDependencies": {
+    "truffle": "^5.0.0-beta.1"
+  }
+}

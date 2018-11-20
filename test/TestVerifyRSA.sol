@@ -1,11 +1,17 @@
-pragma solidity ^0.4.19;
+pragma solidity ^0.4.25;
 
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
-import "../contracts/Pkcs1Sha256Verify.sol";
+import "../contracts/RSA.sol";
 
-contract TestVerify {
-  function testPkcs1Sha256VerifySuccess() public {
+contract TestVerifyRSA {
+  constructor() {
+    rsa = new RSA();
+  }
+
+  RSA rsa;
+
+  function testSuccess() public {
     uint[4] memory s = [
         0x5f49d8dc4519d9520d6542eca08cafb2d99cdb97c5a8685df2476b40505a2f9e,
         0x8d63d76516b83481e2d961a7e8dc5f9f46887e394776711b0f85e4303065c06d,
@@ -36,9 +42,9 @@ contract TestVerify {
     bytes memory mb = uints2bytes(m);
     bytes memory datab = uints2bytes(data);
 
-    Assert.isTrue(Pkcs1Sha256Verify.verify(sha256(datab),sb,eb,mb), "Function should return true indicating a valid signature");
+    Assert.isTrue(rsa.verify(sha256(datab),sb,eb,mb), "Function should return true indicating a valid signature");
   }
-  function testPkcs1Sha256VerifyExponentChanged() public {
+  function testExponentChanged() public {
     uint[4] memory s = [
             0x0ac6e41252383ee5d07f4fb08a22204f56440a8f3c8568d6e6bae46cfc9d39b6,
             0x5b2eae827164d716e9e465301d08fca7356ef447e0699feabbfac16ed19dc923,
@@ -69,9 +75,9 @@ contract TestVerify {
     bytes memory mb = uints2bytes(m);
     bytes memory datab = uints2bytes(data);
 
-    Assert.isFalse(Pkcs1Sha256Verify.verify(sha256(datab),sb,eb,mb), "Function should return false");
+    Assert.isFalse(rsa.verify(sha256(datab),sb,eb,mb), "Function should return false");
   }
-  function testPkcs1Sha256VerifySignatureChanged() public {
+  function testSignatureChanged() public {
     uint[4] memory s = [
             0x750e59f29d2dfeedab2a3a09034904715957149126c63e6a2dc7a633a32c4c05,
             0x61d54eeb1479cb65274bac37cac4751f4dffdfb7530171599b61d94862845f6c,
@@ -102,9 +108,9 @@ contract TestVerify {
     bytes memory mb = uints2bytes(m);
     bytes memory datab = uints2bytes(data);
 
-    Assert.isFalse(Pkcs1Sha256Verify.verify(sha256(datab),sb,eb,mb), "Function should return false");
+    Assert.isFalse(rsa.verify(sha256(datab),sb,eb,mb), "Function should return false");
   }
-  function testPkcs1Sha256VerifyMessageChanged() public {
+  function testMessageChanged() public {
     uint[4] memory s = [
         0x8b5a3675f397841c53a9021dad71a1efab91451c71ad7060ce85d75b306d6403,
         0xba23d3370b0695be87485cf6680204c68424bc7e442ef90ac01c4df420ef5742,
@@ -135,9 +141,9 @@ contract TestVerify {
     bytes memory mb = uints2bytes(m);
     bytes memory datab = uints2bytes(data);
 
-    Assert.isFalse(Pkcs1Sha256Verify.verify(sha256(datab),sb,eb,mb), "Function should return false");
+    Assert.isFalse(rsa.verify(sha256(datab),sb,eb,mb), "Function should return false");
   }
-  function testPkcs1Sha256VerifyEmMovedLeft() public {
+  function testEmMovedLeft() public {
     uint[4] memory s = [
         0xa62e4b688bb3c4c2e11a3a0b1ef81ff4bbaa110c9b830d02bda2d364dadb2345,
         0xa8c5dca58c611515f0c09732ee6a6642d5c5c339460a9d15022f48c36e9bc2fb,
@@ -168,7 +174,7 @@ contract TestVerify {
     bytes memory mb = uints2bytes(m);
     bytes memory datab = uints2bytes(data);
 
-    Assert.isFalse(Pkcs1Sha256Verify.verify(sha256(datab),sb,eb,mb), "Function should return false");
+    Assert.isFalse(rsa.verify(sha256(datab),sb,eb,mb), "Function should return false");
   }
 
   /*********************************

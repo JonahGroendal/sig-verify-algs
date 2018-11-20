@@ -28,5 +28,9 @@
   "homepage": "https://github.com/JonahGroendal/pkcs1-sha256-verify#readme",
   "devDependencies": {
     "truffle": "^5.0.0-beta.1"
+  },
+  "dependencies": {
+    "@ensdomains/buffer": "0.0.5",
+    "@ensdomains/dnssec-oracle": "0.0.7"
   }
 }

@@ -36,9 +36,7 @@ contract TestVerify {
     bytes memory mb = uints2bytes(m);
     bytes memory datab = uints2bytes(data);
 
-    Pkcs1Sha256Verify verifier = Pkcs1Sha256Verify(DeployedAddresses.Pkcs1Sha256Verify());
-    uint expected = 0;
-    Assert.equal(verifier.verify(sha256(datab),sb,eb,mb), expected, "Function should return 0 indicating a valid signature");
+    Assert.isTrue(Pkcs1Sha256Verify.verify(sha256(datab),sb,eb,mb), "Function should return true indicating a valid signature");
   }
   function testPkcs1Sha256VerifyExponentChanged() public {
     uint[4] memory s = [
@@ -71,9 +69,7 @@ contract TestVerify {
     bytes memory mb = uints2bytes(m);
     bytes memory datab = uints2bytes(data);
 
-    Pkcs1Sha256Verify verifier = Pkcs1Sha256Verify(DeployedAddresses.Pkcs1Sha256Verify());
-    uint expected = 1;
-    Assert.equal(verifier.verify(sha256(datab),sb,eb,mb), expected, "Function should return 1");
+    Assert.isFalse(Pkcs1Sha256Verify.verify(sha256(datab),sb,eb,mb), "Function should return false");
   }
   function testPkcs1Sha256VerifySignatureChanged() public {
     uint[4] memory s = [
@@ -106,9 +102,7 @@ contract TestVerify {
     bytes memory mb = uints2bytes(m);
     bytes memory datab = uints2bytes(data);
 
-    Pkcs1Sha256Verify verifier = Pkcs1Sha256Verify(DeployedAddresses.Pkcs1Sha256Verify());
-    uint expected = 1;
-    Assert.equal(verifier.verify(sha256(datab),sb,eb,mb), expected, "Function should return 1");
+    Assert.isFalse(Pkcs1Sha256Verify.verify(sha256(datab),sb,eb,mb), "Function should return false");
   }
   function testPkcs1Sha256VerifyMessageChanged() public {
     uint[4] memory s = [
@@ -141,44 +135,7 @@ contract TestVerify {
     bytes memory mb = uints2bytes(m);
     bytes memory datab = uints2bytes(data);
 
-    Pkcs1Sha256Verify verifier = Pkcs1Sha256Verify(DeployedAddresses.Pkcs1Sha256Verify());
-    uint expected = 5;
-    Assert.equal(verifier.verify(sha256(datab),sb,eb,mb), expected, "Function should return 5");
-  }
-  function testPkcs1Sha256VerifyEm00EndPadRemoved() public {
-    uint[4] memory s = [
-        0x06317d3df0fa7ae350729ae2096b050dcec8909d36681ccca09a7a527b90767f,
-        0x8c2318c49e09483b48df77ddb632d6ca721155165389f7795d3ede7046567864,
-        0x9399242aed6d984ca74fc6c2eb4dd4bb2cd7bf2125ec853f2bf757d665b29487,
-        0xbc5b63df0d0b03b18608d3d9a7576ea0954aef3d3303f7d8fd7e7f9725c114e2
-    ];
-
-    uint[1] memory e = [
-        uint(0x10001)
-    ];
-
-    uint[4] memory m = [
-        0xa8d68acd413c5e195d5ef04e1b4faaf242365cb450196755e92e1215ba59802a,
-        0xafbadbf2564dd550956abb54f8b1c917844e5f36195d1088c600e07cada5c080,
-        0xede679f50b3de32cf4026e514542495c54b1903768791aae9e36f082cd38e941,
-        0xada89baecada61ab0dd37ad536bcb0a0946271594836e92ab5517301d45176b5
-    ];
-
-    uint[4] memory data = [
-        0xb8518b80a55b365eb1850e18f88da2941c99543c2f865df3d37d114d9fc764ff,
-        0xc5e2ae94f2d4ab6276bfc6bda5b6976a7dcfaa56897982880410dd5542af3ad3,
-        0x4c469990cbec828327764842ef488f767c6b0c8cd1e08caec63438f2665517d1,
-        0x95a4d4daf64bc2a70bd11d119eec93a060960245d162844c5f11a98cd26003e1
-    ];
-
-    bytes memory sb = uints2bytes(s);
-    bytes memory eb = uints2bytes(e);
-    bytes memory mb = uints2bytes(m);
-    bytes memory datab = uints2bytes(data);
-
-    Pkcs1Sha256Verify verifier = Pkcs1Sha256Verify(DeployedAddresses.Pkcs1Sha256Verify());
-    uint expected = 3;
-    Assert.equal(verifier.verify(sha256(datab),sb,eb,mb), expected, "Function should return 3");
+    Assert.isFalse(Pkcs1Sha256Verify.verify(sha256(datab),sb,eb,mb), "Function should return false");
   }
   function testPkcs1Sha256VerifyEmMovedLeft() public {
     uint[4] memory s = [
@@ -211,9 +168,7 @@ contract TestVerify {
     bytes memory mb = uints2bytes(m);
     bytes memory datab = uints2bytes(data);
 
-    Pkcs1Sha256Verify verifier = Pkcs1Sha256Verify(DeployedAddresses.Pkcs1Sha256Verify());
-    uint expected = 2;
-    Assert.equal(verifier.verify(sha256(datab),sb,eb,mb), expected, "Function should return 2");
+    Assert.isFalse(Pkcs1Sha256Verify.verify(sha256(datab),sb,eb,mb), "Function should return false");
   }
 
   /*********************************

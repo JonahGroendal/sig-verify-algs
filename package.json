@@ -1,5 +1,5 @@
 {
-  "name": "pkcs1-sha256-verify",
+  "name": "sig-verify-algs",
   "version": "1.0.0",
   "description": "Solidity functions for traversing an ASN1-encoded data structure",
   "directories": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JonahGroendal/pkcs1-sha256-verify.git"
+    "url": "git+https://github.com/JonahGroendal/sig-verify-algs.git"
   },
   "keywords": [
     "pkcs1",
@@ -23,9 +23,9 @@
   "author": "Jonah Groendal",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/JonahGroendal/pkcs1-sha256-verify/issues"
+    "url": "https://github.com/JonahGroendal/sig-verify-algs/issues"
   },
-  "homepage": "https://github.com/JonahGroendal/pkcs1-sha256-verify#readme",
+  "homepage": "https://github.com/JonahGroendal/sig-verify-algs#readme",
   "devDependencies": {
     "truffle": "^5.0.0-beta.1"
   },

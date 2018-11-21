@@ -1,13 +1,12 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.4.24;
 
 interface Algorithm {
     /**
     * @dev Verifies a signature.
-    * @param hash The hash data that's signed.
-    * @param s The signature of hash data.
-    * @param e The exponent component of signers pub key
-    * @param m The modulus component of signers pub key
+    * @param data The data that's is signed.
+    * @param sig The signature.
+    * @param key The signers pub key
     * @return True iff the signature is valid.
     */
-    function verify(bytes32 hash, bytes s, bytes e, bytes m) external view returns (bool);
+    function verify(bytes key, bytes data, bytes sig) external view returns (bool);
 }

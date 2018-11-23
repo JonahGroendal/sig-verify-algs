@@ -34,9 +34,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.4.24;\n\ninterface Algorithm {\n    /**\n    * @dev Verifies a signature.\n    * @param data The data that's is signed.\n    * @param sig The signature.\n    * @param key The signers pub key\n    * @return True iff the signature is valid.\n    */\n    function verify(bytes key, bytes data, bytes sig) external view returns (bool);\n}\n",
-  "sourcePath": "/home/jonah/pkcs1-sha256-verify/contracts/Algorithm.sol",
+  "sourcePath": "/home/jonah/sig-verify-algs/contracts/Algorithm.sol",
   "ast": {
-    "absolutePath": "/home/jonah/pkcs1-sha256-verify/contracts/Algorithm.sol",
+    "absolutePath": "/home/jonah/sig-verify-algs/contracts/Algorithm.sol",
     "exportedSymbols": {
       "Algorithm": [
         13
@@ -212,7 +212,7 @@
     "src": "0:343:0"
   },
   "legacyAST": {
-    "absolutePath": "/home/jonah/pkcs1-sha256-verify/contracts/Algorithm.sol",
+    "absolutePath": "/home/jonah/sig-verify-algs/contracts/Algorithm.sol",
     "exportedSymbols": {
       "Algorithm": [
         13
@@ -393,5 +393,5 @@
   },
   "networks": {},
   "schemaVersion": "3.0.0-beta.1",
-  "updatedAt": "2018-11-21T20:51:05.233Z"
+  "updatedAt": "2018-11-23T05:23:03.103Z"
 }

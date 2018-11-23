@@ -6,7 +6,7 @@ import "asn1-decode/contracts/Asn1Decode.sol";
 import "@ensdomains/dnssec-oracle/contracts/algorithms/RSAVerify.sol";
 
 contract RsaSha256Algorithm is Algorithm {
-  using Asn1Decode for uint;
+  using Asn1Decode for bytes;
   using BytesUtil for bytes;
 
   function verify(bytes key, bytes data, bytes sig)
@@ -35,6 +35,7 @@ contract RsaSha256Algorithm is Algorithm {
   pure
   returns (bytes, bytes)
   {
+    bytes32 oid;
     bytes memory modulus;
     bytes memory exponent;
     bytes memory encodedModulus;
@@ -42,17 +43,21 @@ contract RsaSha256Algorithm is Algorithm {
     bytes memory encodedBytes;
     uint node;
 
-    node = Asn1Decode.root(key);
-    node = node.firstChild(key);
-    node = node.next(key);
+    node = key.root();
+    node = key.firstChildOf(node);
+    // OID must be 'rsaEncryption'
+    oid = keccak256(key.bytesAt(key.firstChildOf(node)));
+    require( oid == 0x3be606946d6f343b24d5ecdbd7e3370a5303ed54845f50f466a35f3bbeb46a45 );
+
+    node = key.nextSiblingOf(node);
     // Decode bitstring
-    encodedBytes = node.getValue(key);
+    encodedBytes = key.bytesAt(node);
     for (uint j=0; j<encodedBytes.length-1; j++) {
       encodedBytes[j] = encodedBytes[j+1];
     }
-    node = Asn1Decode.root(encodedBytes);
-    node = node.firstChild(encodedBytes);
-    encodedModulus = node.getValue(encodedBytes);
+    node = encodedBytes.root();
+    node = encodedBytes.firstChildOf(node);
+    encodedModulus = encodedBytes.bytesAt(node);
     // modulus must be positive
     require( encodedModulus[0] & 0x80 == 0 );
     // remove leading zero byte from der encoding of modulus if present
@@ -64,8 +69,8 @@ contract RsaSha256Algorithm is Algorithm {
     } else {
        modulus = encodedModulus;
     }
-    node = node.next(encodedBytes);
-    encodedExponent = node.getValue(encodedBytes);
+    node = encodedBytes.nextSiblingOf(node);
+    encodedExponent = encodedBytes.bytesAt(node);
     // exponent must be positive
     require( encodedExponent[0] & 0x80 == 0 );
     // remove leading zero byte from der encoding of exponent if present

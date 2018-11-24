@@ -11,14 +11,14 @@
     "absolutePath": "@ensdomains/dnssec-oracle/contracts/algorithms/RSAVerify.sol",
     "exportedSymbols": {
       "RSAVerify": [
-        1644
+        1570
       ]
     },
-    "id": 1645,
+    "id": 1571,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1620,
+        "id": 1546,
         "literals": [
           "solidity",
           "^",
@@ -31,10 +31,10 @@
       {
         "absolutePath": "@ensdomains/dnssec-oracle/contracts/BytesUtils.sol",
         "file": "../BytesUtils.sol",
-        "id": 1621,
+        "id": 1547,
         "nodeType": "ImportDirective",
-        "scope": 1645,
-        "sourceUnit": 1518,
+        "scope": 1571,
+        "sourceUnit": 1444,
         "src": "26:27:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -42,10 +42,10 @@
       {
         "absolutePath": "@ensdomains/dnssec-oracle/contracts/algorithms/ModexpPrecompile.sol",
         "file": "./ModexpPrecompile.sol",
-        "id": 1622,
+        "id": 1548,
         "nodeType": "ImportDirective",
-        "scope": 1645,
-        "sourceUnit": 1619,
+        "scope": 1571,
+        "sourceUnit": 1545,
         "src": "54:32:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -56,16 +56,16 @@
         "contractKind": "library",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1644,
+        "id": 1570,
         "linearizedBaseContracts": [
-          1644
+          1570
         ],
         "name": "RSAVerify",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1642,
+              "id": 1568,
               "nodeType": "Block",
               "src": "489:56:7",
               "statements": [
@@ -75,11 +75,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1637,
+                        "id": 1563,
                         "name": "S",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1628,
+                        "referencedDeclaration": 1554,
                         "src": "530:1:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_memory_ptr",
@@ -88,11 +88,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 1638,
+                        "id": 1564,
                         "name": "E",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1626,
+                        "referencedDeclaration": 1552,
                         "src": "533:1:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_memory_ptr",
@@ -101,11 +101,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 1639,
+                        "id": 1565,
                         "name": "N",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1624,
+                        "referencedDeclaration": 1550,
                         "src": "536:1:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_memory_ptr",
@@ -130,32 +130,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1635,
+                        "id": 1561,
                         "name": "ModexpPrecompile",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1618,
+                        "referencedDeclaration": 1544,
                         "src": "506:16:7",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ModexpPrecompile_$1618_$",
+                          "typeIdentifier": "t_type$_t_contract$_ModexpPrecompile_$1544_$",
                           "typeString": "type(library ModexpPrecompile)"
                         }
                       },
-                      "id": 1636,
+                      "id": 1562,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "modexp",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1617,
+                      "referencedDeclaration": 1543,
                       "src": "506:23:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_bytes_memory_ptr_$_t_bytes_memory_ptr_$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$",
                         "typeString": "function (bytes memory,bytes memory,bytes memory) view returns (bool,bytes memory)"
                       }
                     },
-                    "id": 1640,
+                    "id": 1566,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -169,15 +169,15 @@
                       "typeString": "tuple(bool,bytes memory)"
                     }
                   },
-                  "functionReturnParameters": 1634,
-                  "id": 1641,
+                  "functionReturnParameters": 1560,
+                  "id": 1567,
                   "nodeType": "Return",
                   "src": "499:39:7"
                 }
               ]
             },
             "documentation": "@dev Recovers the input data from an RSA signature, returning the result in S.\n@param N The RSA public modulus.\n@param E The RSA public exponent.\n@param S The signature to recover.\n@return True if the recovery succeeded.",
-            "id": 1643,
+            "id": 1569,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -185,15 +185,15 @@
             "name": "rsarecover",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1629,
+              "id": 1555,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1624,
+                  "id": 1550,
                   "name": "N",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1643,
+                  "scope": 1569,
                   "src": "398:14:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -202,7 +202,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 1623,
+                    "id": 1549,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "398:5:7",
@@ -216,10 +216,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1626,
+                  "id": 1552,
                   "name": "E",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1643,
+                  "scope": 1569,
                   "src": "414:14:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -228,7 +228,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 1625,
+                    "id": 1551,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "414:5:7",
@@ -242,10 +242,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1628,
+                  "id": 1554,
                   "name": "S",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1643,
+                  "scope": 1569,
                   "src": "430:14:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -254,7 +254,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 1627,
+                    "id": 1553,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "430:5:7",
@@ -271,15 +271,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 1634,
+              "id": 1560,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1631,
+                  "id": 1557,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1643,
+                  "scope": 1569,
                   "src": "469:4:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -288,7 +288,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1630,
+                    "id": 1556,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "469:4:7",
@@ -302,10 +302,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1633,
+                  "id": 1559,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1643,
+                  "scope": 1569,
                   "src": "475:5:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -314,7 +314,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 1632,
+                    "id": 1558,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "475:5:7",
@@ -329,14 +329,14 @@
               ],
               "src": "468:20:7"
             },
-            "scope": 1644,
+            "scope": 1570,
             "src": "378:167:7",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 1645,
+        "scope": 1571,
         "src": "88:459:7"
       }
     ],
@@ -346,14 +346,14 @@
     "absolutePath": "@ensdomains/dnssec-oracle/contracts/algorithms/RSAVerify.sol",
     "exportedSymbols": {
       "RSAVerify": [
-        1644
+        1570
       ]
     },
-    "id": 1645,
+    "id": 1571,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1620,
+        "id": 1546,
         "literals": [
           "solidity",
           "^",
@@ -366,10 +366,10 @@
       {
         "absolutePath": "@ensdomains/dnssec-oracle/contracts/BytesUtils.sol",
         "file": "../BytesUtils.sol",
-        "id": 1621,
+        "id": 1547,
         "nodeType": "ImportDirective",
-        "scope": 1645,
-        "sourceUnit": 1518,
+        "scope": 1571,
+        "sourceUnit": 1444,
         "src": "26:27:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -377,10 +377,10 @@
       {
         "absolutePath": "@ensdomains/dnssec-oracle/contracts/algorithms/ModexpPrecompile.sol",
         "file": "./ModexpPrecompile.sol",
-        "id": 1622,
+        "id": 1548,
         "nodeType": "ImportDirective",
-        "scope": 1645,
-        "sourceUnit": 1619,
+        "scope": 1571,
+        "sourceUnit": 1545,
         "src": "54:32:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -391,16 +391,16 @@
         "contractKind": "library",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1644,
+        "id": 1570,
         "linearizedBaseContracts": [
-          1644
+          1570
         ],
         "name": "RSAVerify",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1642,
+              "id": 1568,
               "nodeType": "Block",
               "src": "489:56:7",
               "statements": [
@@ -410,11 +410,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1637,
+                        "id": 1563,
                         "name": "S",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1628,
+                        "referencedDeclaration": 1554,
                         "src": "530:1:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_memory_ptr",
@@ -423,11 +423,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 1638,
+                        "id": 1564,
                         "name": "E",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1626,
+                        "referencedDeclaration": 1552,
                         "src": "533:1:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_memory_ptr",
@@ -436,11 +436,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 1639,
+                        "id": 1565,
                         "name": "N",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1624,
+                        "referencedDeclaration": 1550,
                         "src": "536:1:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_memory_ptr",
@@ -465,32 +465,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1635,
+                        "id": 1561,
                         "name": "ModexpPrecompile",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1618,
+                        "referencedDeclaration": 1544,
                         "src": "506:16:7",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ModexpPrecompile_$1618_$",
+                          "typeIdentifier": "t_type$_t_contract$_ModexpPrecompile_$1544_$",
                           "typeString": "type(library ModexpPrecompile)"
                         }
                       },
-                      "id": 1636,
+                      "id": 1562,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "modexp",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1617,
+                      "referencedDeclaration": 1543,
                       "src": "506:23:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_bytes_memory_ptr_$_t_bytes_memory_ptr_$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$",
                         "typeString": "function (bytes memory,bytes memory,bytes memory) view returns (bool,bytes memory)"
                       }
                     },
-                    "id": 1640,
+                    "id": 1566,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -504,15 +504,15 @@
                       "typeString": "tuple(bool,bytes memory)"
                     }
                   },
-                  "functionReturnParameters": 1634,
-                  "id": 1641,
+                  "functionReturnParameters": 1560,
+                  "id": 1567,
                   "nodeType": "Return",
                   "src": "499:39:7"
                 }
               ]
             },
             "documentation": "@dev Recovers the input data from an RSA signature, returning the result in S.\n@param N The RSA public modulus.\n@param E The RSA public exponent.\n@param S The signature to recover.\n@return True if the recovery succeeded.",
-            "id": 1643,
+            "id": 1569,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -520,15 +520,15 @@
             "name": "rsarecover",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1629,
+              "id": 1555,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1624,
+                  "id": 1550,
                   "name": "N",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1643,
+                  "scope": 1569,
                   "src": "398:14:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -537,7 +537,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 1623,
+                    "id": 1549,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "398:5:7",
@@ -551,10 +551,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1626,
+                  "id": 1552,
                   "name": "E",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1643,
+                  "scope": 1569,
                   "src": "414:14:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -563,7 +563,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 1625,
+                    "id": 1551,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "414:5:7",
@@ -577,10 +577,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1628,
+                  "id": 1554,
                   "name": "S",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1643,
+                  "scope": 1569,
                   "src": "430:14:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -589,7 +589,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 1627,
+                    "id": 1553,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "430:5:7",
@@ -606,15 +606,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 1634,
+              "id": 1560,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1631,
+                  "id": 1557,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1643,
+                  "scope": 1569,
                   "src": "469:4:7",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -623,7 +623,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1630,
+                    "id": 1556,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "469:4:7",
@@ -637,10 +637,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 1633,
+                  "id": 1559,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1643,
+                  "scope": 1569,
                   "src": "475:5:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -649,7 +649,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 1632,
+                    "id": 1558,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "475:5:7",
@@ -664,14 +664,14 @@
               ],
               "src": "468:20:7"
             },
-            "scope": 1644,
+            "scope": 1570,
             "src": "378:167:7",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 1645,
+        "scope": 1571,
         "src": "88:459:7"
       }
     ],
@@ -683,5 +683,5 @@
   },
   "networks": {},
   "schemaVersion": "3.0.0-beta.1",
-  "updatedAt": "2018-11-23T22:24:53.438Z"
+  "updatedAt": "2018-11-24T18:36:21.357Z"
 }

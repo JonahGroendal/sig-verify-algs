@@ -1,19 +1,17 @@
-pragma solidity  ^0.4.24;
+pragma solidity  ^0.5.1;
 
 import "./Algorithm.sol";
 import "asn1-decode/contracts/Asn1Decode.sol";
-import "@ensdomains/dnssec-oracle/contracts/BytesUtils.sol";
-import "@ensdomains/dnssec-oracle/contracts/algorithms/RSAVerify.sol";
+import "solidity-bytes-utils/contracts/BytesUtils.sol";
+import "./RSAVerify.sol";
 
 contract RsaSha256Algorithm is Algorithm {
   using BytesUtils for bytes;
   using Asn1Decode for bytes;
   using NodePtr for uint;
 
-  function verify(bytes key, bytes data, bytes sig)
-  external
-  view
-  returns (bool)
+  function verify(bytes calldata key, bytes calldata data, bytes calldata sig)
+  external view returns (bool)
   {
     bool ok;
     bytes memory result;
@@ -32,9 +30,7 @@ contract RsaSha256Algorithm is Algorithm {
    * @param key A DER-encoded RSA public key
    */
   function extractKeyComponents(bytes memory key)
-  private
-  pure
-  returns (bytes, bytes)
+  private pure returns (bytes memory, bytes memory)
   {
     bytes32 oid;
     uint node;

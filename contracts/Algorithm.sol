@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.5.1;
 
 interface Algorithm {
     /**
@@ -8,5 +8,5 @@ interface Algorithm {
     * @param key The signers pub key
     * @return True iff the signature is valid.
     */
-    function verify(bytes key, bytes data, bytes sig) external view returns (bool);
+    function verify(bytes calldata key, bytes calldata data, bytes calldata sig) external view returns (bool);
 }

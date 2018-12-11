@@ -30,8 +30,7 @@
     "truffle": "^5.0.0-beta.1"
   },
   "dependencies": {
-    "@ensdomains/buffer": "0.0.5",
-    "@ensdomains/dnssec-oracle": "0.0.7",
+    "@ensdomains/buffer": "github:JonahGroendal/buffer",
     "asn1-decode": "git+ssh://git@github.com/JonahGroendal/asn1-decode.git"
   }
 }

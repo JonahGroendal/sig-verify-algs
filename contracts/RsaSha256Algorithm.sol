@@ -44,7 +44,7 @@ contract RsaSha256Algorithm is Algorithm {
     require(oid == 0x3be606946d6f343b24d5ecdbd7e3370a5303ed54845f50f466a35f3bbeb46a45, "Invalid key");
 
     node = key.nextSiblingOf(node);
-    node = key.rootOfBitstringAt(node);
+    node = key.rootOfBitStringAt(node);
     node = key.firstChildOf(node);
     modulus = key.uintBytesAt(node);
     node = key.nextSiblingOf(node);

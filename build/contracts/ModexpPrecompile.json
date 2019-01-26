@@ -1140,11 +1140,11 @@
                       }
                     },
                     {
-                      "size": {
-                        "declaration": 89,
+                      "output": {
+                        "declaration": 86,
                         "isOffset": false,
                         "isSlot": false,
-                        "src": "879:4:2",
+                        "src": "889:6:2",
                         "valueSize": 1
                       }
                     },
@@ -1158,20 +1158,20 @@
                       }
                     },
                     {
-                      "output": {
-                        "declaration": 86,
-                        "isOffset": false,
-                        "isSlot": false,
-                        "src": "889:6:2",
-                        "valueSize": 1
-                      }
-                    },
-                    {
                       "modulus": {
                         "declaration": 81,
                         "isOffset": false,
                         "isSlot": false,
                         "src": "908:7:2",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "size": {
+                        "declaration": 89,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "879:4:2",
                         "valueSize": 1
                       }
                     }
@@ -2480,11 +2480,11 @@
                       }
                     },
                     {
-                      "size": {
-                        "declaration": 89,
+                      "output": {
+                        "declaration": 86,
                         "isOffset": false,
                         "isSlot": false,
-                        "src": "879:4:2",
+                        "src": "889:6:2",
                         "valueSize": 1
                       }
                     },
@@ -2498,20 +2498,20 @@
                       }
                     },
                     {
-                      "output": {
-                        "declaration": 86,
-                        "isOffset": false,
-                        "isSlot": false,
-                        "src": "889:6:2",
-                        "valueSize": 1
-                      }
-                    },
-                    {
                       "modulus": {
                         "declaration": 81,
                         "isOffset": false,
                         "isSlot": false,
                         "src": "908:7:2",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "size": {
+                        "declaration": 89,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "879:4:2",
                         "valueSize": 1
                       }
                     }
@@ -2693,7 +2693,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.0-beta.2",
-  "updatedAt": "2018-12-11T00:08:24.853Z",
+  "updatedAt": "2019-01-26T23:08:25.167Z",
   "devdoc": {
     "methods": {}
   },

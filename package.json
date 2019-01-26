@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/JonahGroendal/sig-verify-algs#readme",
   "devDependencies": {
-    "truffle": "^5.0.0-beta.1"
+    "truffle": "^5.0.2"
   },
   "dependencies": {
     "@ensdomains/buffer": "github:JonahGroendal/buffer",

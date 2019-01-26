@@ -389,7 +389,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.0-beta.2",
-  "updatedAt": "2019-01-26T23:08:25.166Z",
+  "updatedAt": "2019-01-26T23:35:12.298Z",
   "devdoc": {
     "methods": {
       "verify(bytes,bytes,bytes)": {

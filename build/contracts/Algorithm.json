@@ -33,7 +33,7 @@
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.5.1;\n\ninterface Algorithm {\n    /**\n    * @dev Verifies a signature.\n    * @param data The data that's is signed.\n    * @param sig The signature.\n    * @param key The signers pub key\n    * @return True iff the signature is valid.\n    */\n    function verify(bytes calldata key, bytes calldata data, bytes calldata sig) external view returns (bool);\n}\n",
+  "source": "pragma solidity ^0.5.2;\n\ninterface Algorithm {\n    /**\n    * @dev Verifies a signature.\n    * @param data The data that's is signed.\n    * @param sig The signature.\n    * @param key The signers pub key\n    * @return True iff the signature is valid.\n    */\n    function verify(bytes calldata key, bytes calldata data, bytes calldata sig) external view returns (bool);\n}\n",
   "sourcePath": "/home/jonah/sig-verify-algs/contracts/Algorithm.sol",
   "ast": {
     "absolutePath": "/home/jonah/sig-verify-algs/contracts/Algorithm.sol",
@@ -51,7 +51,7 @@
           "solidity",
           "^",
           "0.5",
-          ".1"
+          ".2"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:23:0"
@@ -225,7 +225,7 @@
           "solidity",
           "^",
           "0.5",
-          ".1"
+          ".2"
         ],
         "nodeType": "PragmaDirective",
         "src": "0:23:0"
@@ -385,11 +385,11 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.5.1+commit.c8a2cb62.Emscripten.clang"
+    "version": "0.5.2+commit.1df8f40c.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.0-beta.2",
-  "updatedAt": "2019-01-26T23:35:12.298Z",
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-01-27T00:18:46.851Z",
   "devdoc": {
     "methods": {
       "verify(bytes,bytes,bytes)": {

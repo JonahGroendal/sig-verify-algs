@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@ensdomains/buffer": "github:JonahGroendal/buffer",
-    "asn1-decode": "git+ssh://git@github.com/JonahGroendal/asn1-decode.git"
+    "asn1-decode": "github:JonahGroendal/asn1-decode",
+    "solidity-bytes-utils": "github:JonahGroendal/solidity-bytes-utils"
   }
 }

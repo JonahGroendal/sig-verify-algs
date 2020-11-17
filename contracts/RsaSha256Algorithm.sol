@@ -1,9 +1,9 @@
 pragma solidity  ^0.5.2;
 
-import "./Algorithm.sol";
 import "asn1-decode/contracts/Asn1Decode.sol";
-import "solidity-bytes-utils/contracts/BytesUtils.sol";
-import "./RSAVerify.sol";
+import "@ensdomains/dnssec-oracle/contracts/algorithms/Algorithm.sol";
+import "@ensdomains/dnssec-oracle/contracts/BytesUtils.sol";
+import "@ensdomains/dnssec-oracle/contracts/algorithms/RSAVerify.sol";
 
 contract RsaSha256Algorithm is Algorithm {
   using BytesUtils for bytes;

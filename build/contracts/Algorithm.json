@@ -13,7 +13,7 @@
           "type": "bytes"
         },
         {
-          "name": "sig",
+          "name": "signature",
           "type": "bytes"
         }
       ],
@@ -29,66 +29,67 @@
       "type": "function"
     }
   ],
+  "metadata": "",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "/*\nBSD 2-Clause License\n\nCopyright (c) 2017, Nick Johnson\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n* Redistributions of source code must retain the above copyright notice, this\n  list of conditions and the following disclaimer.\n\n* Redistributions in binary form must reproduce the above copyright notice,\n  this list of conditions and the following disclaimer in the documentation\n  and/or other materials provided with the distribution.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\nAND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\nSERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\nCAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\nOR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n*/\n\npragma solidity ^0.5.2;\n\ninterface Algorithm {\n    /**\n    * @dev Verifies a signature.\n    * @param key The signers pub key\n    * @param data The data that's is signed.\n    * @param sig The signature.\n    * @return True iff the signature is valid.\n    */\n    function verify(bytes calldata key, bytes calldata data, bytes calldata sig) external view returns (bool);\n}\n",
-  "sourcePath": "/home/jonah/sig-verify-algs/contracts/Algorithm.sol",
+  "source": "pragma solidity >0.4.23;\n\n/**\n* @dev An interface for contracts implementing a DNSSEC (signing) algorithm.\n*/\ninterface Algorithm {\n    /**\n    * @dev Verifies a signature.\n    * @param key The public key to verify with.\n    * @param data The signed data to verify.\n    * @param signature The signature to verify.\n    * @return True iff the signature is valid.\n    */\n    function verify(bytes calldata key, bytes calldata data, bytes calldata signature) external view returns (bool);\n}\n",
+  "sourcePath": "@ensdomains/dnssec-oracle/contracts/algorithms/Algorithm.sol",
   "ast": {
-    "absolutePath": "/home/jonah/sig-verify-algs/contracts/Algorithm.sol",
+    "absolutePath": "@ensdomains/dnssec-oracle/contracts/algorithms/Algorithm.sol",
     "exportedSymbols": {
       "Algorithm": [
-        13
+        1437
       ]
     },
-    "id": 14,
+    "id": 1438,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1,
+        "id": 1425,
         "literals": [
           "solidity",
-          "^",
-          "0.5",
-          ".2"
+          ">",
+          "0.4",
+          ".23"
         ],
         "nodeType": "PragmaDirective",
-        "src": "1324:23:0"
+        "src": "0:24:4"
       },
       {
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "interface",
-        "documentation": null,
+        "documentation": "@dev An interface for contracts implementing a DNSSEC (signing) algorithm.",
         "fullyImplemented": false,
-        "id": 13,
+        "id": 1437,
         "linearizedBaseContracts": [
-          13
+          1437
         ],
         "name": "Algorithm",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": null,
-            "documentation": "@dev Verifies a signature.\n@param key The signers pub key\n@param data The data that's is signed.\n@param sig The signature.\n@return True iff the signature is valid.",
-            "id": 12,
+            "documentation": "@dev Verifies a signature.\n@param key The public key to verify with.\n@param data The signed data to verify.\n@param signature The signature to verify.\n@return True iff the signature is valid.",
+            "id": 1436,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "verify",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 8,
+              "id": 1432,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3,
+                  "id": 1427,
                   "name": "key",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12,
-                  "src": "1600:18:0",
+                  "scope": 1436,
+                  "src": "388:18:4",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -96,10 +97,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 2,
+                    "id": 1426,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1600:5:0",
+                    "src": "388:5:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -110,11 +111,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 5,
+                  "id": 1429,
                   "name": "data",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12,
-                  "src": "1620:19:0",
+                  "scope": 1436,
+                  "src": "408:19:4",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -122,10 +123,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 4,
+                    "id": 1428,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1620:5:0",
+                    "src": "408:5:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -136,11 +137,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 7,
-                  "name": "sig",
+                  "id": 1431,
+                  "name": "signature",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12,
-                  "src": "1641:18:0",
+                  "scope": 1436,
+                  "src": "429:24:4",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -148,10 +149,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 6,
+                    "id": 1430,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1641:5:0",
+                    "src": "429:5:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -161,19 +162,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1599:61:0"
+              "src": "387:67:4"
             },
             "returnParameters": {
-              "id": 11,
+              "id": 1435,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 10,
+                  "id": 1434,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12,
-                  "src": "1684:4:0",
+                  "scope": 1436,
+                  "src": "478:4:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -181,10 +182,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 9,
+                    "id": 1433,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1684:4:0",
+                    "src": "478:4:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -194,75 +195,75 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1683:6:0"
+              "src": "477:6:4"
             },
-            "scope": 13,
-            "src": "1584:106:0",
+            "scope": 1437,
+            "src": "372:112:4",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 14,
-        "src": "1349:343:0"
+        "scope": 1438,
+        "src": "110:376:4"
       }
     ],
-    "src": "1324:369:0"
+    "src": "0:487:4"
   },
   "legacyAST": {
-    "absolutePath": "/home/jonah/sig-verify-algs/contracts/Algorithm.sol",
+    "absolutePath": "@ensdomains/dnssec-oracle/contracts/algorithms/Algorithm.sol",
     "exportedSymbols": {
       "Algorithm": [
-        13
+        1437
       ]
     },
-    "id": 14,
+    "id": 1438,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1,
+        "id": 1425,
         "literals": [
           "solidity",
-          "^",
-          "0.5",
-          ".2"
+          ">",
+          "0.4",
+          ".23"
         ],
         "nodeType": "PragmaDirective",
-        "src": "1324:23:0"
+        "src": "0:24:4"
       },
       {
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "interface",
-        "documentation": null,
+        "documentation": "@dev An interface for contracts implementing a DNSSEC (signing) algorithm.",
         "fullyImplemented": false,
-        "id": 13,
+        "id": 1437,
         "linearizedBaseContracts": [
-          13
+          1437
         ],
         "name": "Algorithm",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": null,
-            "documentation": "@dev Verifies a signature.\n@param key The signers pub key\n@param data The data that's is signed.\n@param sig The signature.\n@return True iff the signature is valid.",
-            "id": 12,
+            "documentation": "@dev Verifies a signature.\n@param key The public key to verify with.\n@param data The signed data to verify.\n@param signature The signature to verify.\n@return True iff the signature is valid.",
+            "id": 1436,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "verify",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 8,
+              "id": 1432,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3,
+                  "id": 1427,
                   "name": "key",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12,
-                  "src": "1600:18:0",
+                  "scope": 1436,
+                  "src": "388:18:4",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -270,10 +271,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 2,
+                    "id": 1426,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1600:5:0",
+                    "src": "388:5:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -284,11 +285,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 5,
+                  "id": 1429,
                   "name": "data",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12,
-                  "src": "1620:19:0",
+                  "scope": 1436,
+                  "src": "408:19:4",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -296,10 +297,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 4,
+                    "id": 1428,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1620:5:0",
+                    "src": "408:5:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -310,11 +311,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 7,
-                  "name": "sig",
+                  "id": 1431,
+                  "name": "signature",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12,
-                  "src": "1641:18:0",
+                  "scope": 1436,
+                  "src": "429:24:4",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -322,10 +323,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 6,
+                    "id": 1430,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1641:5:0",
+                    "src": "429:5:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -335,19 +336,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1599:61:0"
+              "src": "387:67:4"
             },
             "returnParameters": {
-              "id": 11,
+              "id": 1435,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 10,
+                  "id": 1434,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12,
-                  "src": "1684:4:0",
+                  "scope": 1436,
+                  "src": "478:4:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -355,10 +356,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 9,
+                    "id": 1433,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1684:4:0",
+                    "src": "478:4:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -368,36 +369,37 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1683:6:0"
+              "src": "477:6:4"
             },
-            "scope": 13,
-            "src": "1584:106:0",
+            "scope": 1437,
+            "src": "372:112:4",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 14,
-        "src": "1349:343:0"
+        "scope": 1438,
+        "src": "110:376:4"
       }
     ],
-    "src": "1324:369:0"
+    "src": "0:487:4"
   },
   "compiler": {
     "name": "solc",
     "version": "0.5.2+commit.1df8f40c.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.1",
-  "updatedAt": "2019-04-17T22:22:35.861Z",
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2020-11-17T07:50:16.336Z",
   "devdoc": {
+    "details": "An interface for contracts implementing a DNSSEC (signing) algorithm.",
     "methods": {
       "verify(bytes,bytes,bytes)": {
         "details": "Verifies a signature.",
         "params": {
-          "data": "The data that's is signed.",
-          "key": "The signers pub key",
-          "sig": "The signature."
+          "data": "The signed data to verify.",
+          "key": "The public key to verify with.",
+          "signature": "The signature to verify."
         },
         "return": "True iff the signature is valid."
       }

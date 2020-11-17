@@ -6,7 +6,11 @@
     "test": "test"
   },
   "scripts": {
-    "test": "truffle test"
+    "compile": "truffle compile",
+    "migrate": "truffle migrate",
+    "migrate-kovan": "truffle migrate --network kovan",
+    "test": "truffle test",
+    "generate-keys": "node generateKeys.js"
   },
   "repository": {
     "type": "git",
@@ -27,11 +31,12 @@
   },
   "homepage": "https://github.com/JonahGroendal/sig-verify-algs#readme",
   "devDependencies": {
-    "truffle": "^5.0.2"
+    "@truffle/hdwallet-provider": "^1.2.0",
+    "truffle": "^5.1.53"
   },
   "dependencies": {
     "@ensdomains/buffer": "github:JonahGroendal/buffer",
-    "asn1-decode": "github:JonahGroendal/asn1-decode",
-    "solidity-bytes-utils": "github:JonahGroendal/solidity-bytes-utils"
+    "@ensdomains/dnssec-oracle": "github:JonahGroendal/dnssec-oracle",
+    "asn1-decode": "github:JonahGroendal/asn1-decode"
   }
 }

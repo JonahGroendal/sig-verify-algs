@@ -1,7 +1,7 @@
 {
   "name": "sig-verify-algs",
   "version": "1.0.0",
-  "description": "Solidity functions for traversing an ASN1-encoded data structure",
+  "description": "Solidity contracts for verifying cryptographic signatures",
   "directories": {
     "test": "test"
   },

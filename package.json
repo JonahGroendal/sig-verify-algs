@@ -32,7 +32,7 @@
   "homepage": "https://github.com/JonahGroendal/sig-verify-algs#readme",
   "devDependencies": {
     "@truffle/hdwallet-provider": "^1.2.0",
-    "truffle": "^5.1.53"
+    "truffle": "^5.7.1"
   },
   "dependencies": {
     "@ensdomains/buffer": "github:JonahGroendal/buffer",
